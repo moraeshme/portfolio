@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { ThemeProvider, useTheme } from '../contexts/ThemeContext';
-import { motion } from 'framer-motion';
+
 
 function PortfolioContent() {
   const theme = useTheme();
@@ -9,17 +9,17 @@ function PortfolioContent() {
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      style={{ backgroundColor: theme.background_color }}
-      className="min-h-screen"
-    >
-      <h1 style={{ color: theme.primary_color }}>Bem-vindo ao meu Portfólio</h1>
-      {/* Conteúdo dinâmico */}
-    </motion.div>
-  );
-}
-
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        style={{ backgroundColor: theme.background_color }}
+        className="min-h-screen"
+        >
+        <h1 style={{ color: theme.primary_color }}>Bem-vindo ao meu Portfólio</h1>
+        {/* Conteúdo dinâmico */}
+    </  motion.div>
+  );  
+} 
+  
 export default function Portfolio() {
   const { username } = useParams();
 
