@@ -1,15 +1,23 @@
-// App.jsx
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Portfolio from './pages/Portfolio';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Dashboard from './pages/admin/Dashboard';
+import Projects from './pages/admin/Projects';
+import Skills from './pages/admin/Skills';
+import AboutMe from './pages/admin/AboutMe';
 
-function App() {
+export default function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
-        <Route path="/:username" element={<Portfolio />} />
+        <Route path="/admin/dashboard" element={<Dashboard />} />
+        <Route path="/admin/projects" element={
+            <ProtectedRoute>
+              <Projects />
+            </ProtectedRoute>
+          } 
+        />
+        <Route path="/admin/skills" element={<Skills />} />
+        <Route path="/admin/about-me" element={<AboutMe />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
-
-export default App;
