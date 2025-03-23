@@ -1,0 +1,26 @@
+name: CI Frontend React
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Rodar testes Jest
+        run: npm run test
+
+      - name: Fazer build
+        run: npm run build
